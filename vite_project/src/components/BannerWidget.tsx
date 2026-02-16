@@ -5,6 +5,9 @@ import {BannerStatic} from "./BannerStatic.tsx";
 type Props = {
     host: HTMLElement
 }
+
+export const WIDGET_ID = 'Banner';
+
 export const BannerWidget = ({host}: Props) => {
     const config = useWidgetConfig(host);
 
