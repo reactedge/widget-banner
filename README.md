@@ -113,3 +113,22 @@ This produces a versioned JavaScript file in the www/ directory
 (e.g. widget-banner@x.y.z.iife.js).
 
 The www/ Generated build output produced by the build process. This folder is intentionally not committed to the repository.
+
+## CSS Isolation
+
+ReactEdge widgets use PostCSS prefixing to guarantee style isolation
+when embedded into hostile environments such as WordPress or Magento.
+
+All selectors are automatically scoped to a widget-specific root class.
+
+### Example:
+Source CSS:
+```bash
+.slide { ... }
+```
+Production output:
+```bash
+.reactedge-banner .slide { ... }
+```
+
+This prevents collisions with host themes or other plugins.

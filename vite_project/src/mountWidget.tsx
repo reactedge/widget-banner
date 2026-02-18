@@ -3,12 +3,12 @@ import {BannerWidget} from "./components/BannerWidget.tsx";
 import {fallback} from "./lib/fallback.ts";
 import {activity} from "./activity";
 import {getMountedHost} from "./widget-runtime/lib/hostReader.ts";
-import {ensureGlobalStyle} from "./lib/style.ts";
+
+export const WIDGET_ID = 'banner';
 
 export function mountWidget(hostElement: HTMLElement) {
     const mountedHost = getMountedHost(hostElement);
-
-    ensureGlobalStyle('reactedge-banner-css', '/widget/banner.css');
+    hostElement.classList.add(`reactedge-${WIDGET_ID}`);
 
     activity('bootstrap', 'Widget mounted', hostElement);
 
