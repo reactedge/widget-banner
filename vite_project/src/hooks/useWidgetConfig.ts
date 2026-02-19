@@ -8,11 +8,11 @@ export function useWidgetConfig(
     return useMemo(() => {
         const baseConfig = readWidgetConfig(host);
         if (!baseConfig) {
-            activity('bootstrap', '[Banner] Widget is not correctly configured', null, 'error');
+            activity('bootstrap', 'Widget is not correctly configured', null, 'error');
             return null;
         }
 
-        activity('bootstrap', '[Banner] Widget config loaded', baseConfig);
+        activity('bootstrap', 'Widget config', baseConfig);
 
         return baseConfig
     }, [host]);
