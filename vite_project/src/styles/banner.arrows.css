@@ -50,3 +50,7 @@
     outline: 2px solid #fff;
     outline-offset: 2px;
 }
+
+button {
+    min-width: unset;
+}
