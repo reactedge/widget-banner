@@ -1,37 +1,19 @@
-import {type BannerSettingConfig, type BannerSlide, defaultBannerConfig} from "./components/Types.ts";
+import {type BannerSettingConfig, type BannerSlide} from "./components/Types.ts";
+import {loadContract} from "./widget-runtime/lib/contractLoader.ts";
+import {activity} from "./activity";
 
 export interface BannerWidgetConfig {
-    /**
-     * Structured banner payload.
-     * Shape is banner-owned and opaque to the platform.
-     */
     readonly slides: BannerSlide[]
 
     readonly settings: BannerSettingConfig;
 }
 
-export function readWidgetConfig(
+export async function readWidgetConfig(
     hostElement: HTMLElement
-): BannerWidgetConfig {
-    const configScript = hostElement.querySelector<HTMLScriptElement>(
-        'script[type="application/json"][data-config]'
-    );
+): Promise<BannerWidgetConfig | null> {
+    const contract = await loadContract(hostElement);
 
-    if (!configScript) {
-        throw new Error("USP widget requires a <script data-config> block.");
-    }
+    activity('bootstrap', 'Config resolved', contract.data);
 
-    try {
-        const parsed = JSON.parse(configScript.textContent || "{}");
-
-        return Object.freeze({
-            slides: parsed.data.slides ?? [],
-            settings: parsed.settings ?? defaultBannerConfig,
-        });
-    } catch {
-        return {
-            slides: [],
-            settings: defaultBannerConfig
-        };
-    }
+    return Object.freeze(contract.data);
 }

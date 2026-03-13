@@ -7,7 +7,7 @@ type Props = {
 }
 
 export const BannerWidget = ({host}: Props) => {
-    const config = useWidgetConfig(host);
+    const {config} = useWidgetConfig(host);
 
     if (!config) return null;
 

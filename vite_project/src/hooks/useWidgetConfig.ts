@@ -1,22 +1,54 @@
-import {useMemo} from "react";
 import {type BannerWidgetConfig, readWidgetConfig} from "../BannerConfig.ts";
 import {activity} from "../activity";
+import {useEffect, useState} from "react";
 
 export function useWidgetConfig(
     host: HTMLElement
-): BannerWidgetConfig | null {
-    return useMemo(() => {
-        const baseConfig = readWidgetConfig(host);
-        if (!baseConfig) {
-            activity('bootstrap', 'Widget is not correctly configured', null, 'error');
-            return null;
+): {
+    config: BannerWidgetConfig | null;
+    error: Error | null;
+    loading: boolean;
+} {
+
+    const [config, setConfig] = useState<BannerWidgetConfig | null>(null);
+    const [error, setError] = useState<Error | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        let cancelled = false;
+
+        async function bootstrap() {
+            try {
+                setLoading(true);
+                const resolved = await readWidgetConfig(host);
+
+                if (!cancelled) {
+                    setConfig(resolved);
+                    setError(null);
+                }
+            } catch (err) {
+                activity('bootstrap', 'Config error', {
+                    error: (err as Error).message
+                });
+
+                if (!cancelled) {
+                    setError(err as Error);
+                    setConfig(null);
+                }
+            } finally {
+                if (!cancelled) setLoading(false);
+            }
         }
 
-        activity('bootstrap', 'Widget config', baseConfig);
+        bootstrap();
 
-        return baseConfig
+        return () => {
+            cancelled = true;
+        };
+
     }, [host]);
-}
 
+    return { config, error, loading };
+}
 
 
