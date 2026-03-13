@@ -55,3 +55,6 @@ jobs:
             --chown=www-data:www-data \
             www/widget-banner@${VERSION}.iife.js* \
             ${{ secrets.WIDGET_SSH_USER }}@${{ secrets.WIDGET_SSH_HOST }}:/var/www/widgets/banner/
+          rsync -avz \
+            www/cdn/ \
+            ${{ secrets.WIDGET_SSH_USER }}@${{ secrets.WIDGET_SSH_HOST }}:/var/www/widgets/banner/cdn/
