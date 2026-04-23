@@ -1,6 +1,6 @@
 # ReactEdge – Banner Widget
 
-A small, embeddable **Banner (Unique Selling Points) widget** designed to be safely integrated into existing websites without owning the page or application lifecycle.
+A small, embeddable **Banner widget** designed to be safely integrated into existing websites without owning the page or application lifecycle.
 
 This widget is part of the **ReactEdge** initiative: a collection of frontend widgets built with a strong emphasis on isolation, reversibility, and clarity.
 
@@ -70,7 +70,7 @@ Typical usage looks like:
 ```html
 <script src="path-to-widget.js"></script>
 
-<reactedge-banner-widget></reactedge-banner-widget>
+<banner-widget data-contract="/cdn/secondary.json" />
 ```
 
 ## Local development
