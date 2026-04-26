@@ -18,6 +18,7 @@ export default defineConfig({
     emptyOutDir: false,
     lib: {
       entry: "src/widget.ts",
+      name: `ReactEdge_${widgetName}`,
       fileName: () => `widget-${widgetName}@${pkg.version}.iife.js`,
       formats: ["iife"],
     },
@@ -29,5 +30,11 @@ export default defineConfig({
     },
     minify: true,
     sourcemap: false
+  },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom'
+    ]
   }
 })
