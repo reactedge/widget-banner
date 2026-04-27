@@ -1,12 +1,11 @@
 import { mountWidget } from "./mountWidget";
+import type {BannerRawWidgetConfig} from "./BannerConfig.ts";
 
-class BannerWidget extends HTMLElement {
-    connectedCallback() {
-        mountWidget(this);
+export async function mount(el: HTMLElement, config: BannerRawWidgetConfig) {
+    if (!config) {
+        throw new Error('Config is required');
     }
-}
 
-if (!customElements.get("banner-widget")) {
-    customElements.define("banner-widget", BannerWidget);
+    await mountWidget(el, config)
 }
 

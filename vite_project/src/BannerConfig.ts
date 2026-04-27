@@ -1,6 +1,9 @@
-import {type BannerSettingConfig, type BannerSlide} from "./components/Types.ts";
-import {loadContract} from "./widget-runtime/lib/contractLoader.ts";
 import {activity} from "./activity";
+import type {BannerSettingConfig, BannerSlide} from "./components/Types.ts";
+
+export interface BannerRawWidgetConfig {
+    data: BannerWidgetConfig
+}
 
 export interface BannerWidgetConfig {
     readonly slides: BannerSlide[]
@@ -8,12 +11,12 @@ export interface BannerWidgetConfig {
     readonly settings: BannerSettingConfig;
 }
 
-export async function readWidgetConfig(
-    hostElement: HTMLElement
-): Promise<BannerWidgetConfig | null> {
-    const contract = await loadContract(hostElement);
+export function readWidgetConfig(
+    rawConfig: BannerRawWidgetConfig
+): BannerWidgetConfig {
+    const contract = rawConfig.data;
 
-    activity('bootstrap', 'Config resolved', contract.data);
+    activity('bootstrap', 'Config resolved', contract);
 
-    return Object.freeze(contract.data);
+    return Object.freeze(contract);
 }
