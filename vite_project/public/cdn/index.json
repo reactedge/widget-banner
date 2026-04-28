@@ -1,0 +1,9 @@
+{
+  "contracts": [
+    "/cdn/uk.json",
+    "/cdn/fr.json",
+    "/cdn/reactedge.json",
+    "/cdn/secondary.json",
+    "/cdn/hero.json"
+  ]
+}

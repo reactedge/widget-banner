@@ -1,0 +1,31 @@
+{
+  "data": {
+    "slides": [
+      {
+        "image": {
+          "src": "https://southerndemo.com/wp-content/themes/greenedge/images/home-banner/image1.webp",
+          "alt": "Formal garden steps surrounded by neatly clipped hedges and topiary"
+        }
+      },
+      {
+        "image": {
+          "src": "https://southerndemo.com/wp-content/themes/greenedge/images/home-banner/image2.webp",
+          "alt": "Large sculpted topiary bush in a professionally landscaped garden"
+        }
+      },
+      {
+        "image": {
+          "src": "https://southerndemo.com/wp-content/themes/greenedge/images/home-banner/image3.webp",
+          "alt": "Purple flowers adding colour to a stone garden wall"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "mode": {
+      "desktop": "static",
+      "tablet": "slider",
+      "mobile": "slider"
+    }
+  }
+}

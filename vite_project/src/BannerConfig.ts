@@ -14,7 +14,10 @@ export interface BannerWidgetConfig {
 export function readWidgetConfig(
     rawConfig: BannerRawWidgetConfig
 ): BannerWidgetConfig {
-    const contract = rawConfig.data;
+    const contract = {
+        slides: rawConfig.data.slides,
+        settings: rawConfig.data.settings
+    };
 
     activity('bootstrap', 'Config resolved', contract);
 
