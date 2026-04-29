@@ -15,13 +15,13 @@
           "alt": "Green leaf with a drop of rain resting on the surface"
         }
       }
-    ]
-  },
-  "settings": {
-    "mode": {
-      "desktop": "static",
-      "tablet": "slider",
-      "mobile": "slider"
+    ],
+    "settings": {
+      "mode": {
+        "desktop": "static",
+        "tablet": "slider",
+        "mobile": "slider"
+      }
     }
   }
 }

@@ -19,13 +19,13 @@
           "alt": "Purple flowers adding colour to a stone garden wall"
         }
       }
-    ]
-  },
-  "settings": {
-    "mode": {
-      "desktop": "static",
-      "tablet": "slider",
-      "mobile": "slider"
+    ],
+    "settings": {
+      "mode": {
+        "desktop": "static",
+        "tablet": "slider",
+        "mobile": "slider"
+      }
     }
   }
 }

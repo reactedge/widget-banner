@@ -9,14 +9,15 @@ export const BannerSlider = ({ slides, config }: BannerSliderProps) => {
 
     const ratio = config.mode.desktop || "16:7";
     const [w, h] = ratio.split(":").map(Number);
+    const paddingTop = (h / w) * 100;
 
     return (
         <div className="banner-media">
             <div style={{
                 position: "relative",
                 width: "100%",
-                aspectRatio: `${w} / ${h}`,
-                height: config.height ?? "auto"
+                height: config.height?? "300px",
+                paddingTop: paddingTop + "%"
             }}>
                 {slides.map((slide, i) => (
                     <BannerSlide
