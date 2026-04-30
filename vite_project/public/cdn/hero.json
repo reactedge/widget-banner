@@ -22,7 +22,8 @@
         "tablet": "slider",
         "mobile": "slider"
       },
-      "height": "400px"
+      "imageWidth": 538,
+      "imageHeight": 316
     }
   }
 }

@@ -1,0 +1,27 @@
+{
+  "data": {
+    "slides": [
+      {
+        "image": {
+          "src": "https://mageos-docker.magsite.co.uk/media/wysiwyg/widgets/banner/techbeauty1.png",
+          "alt": "Beauty and technology fusion"
+        }
+      },
+      {
+        "image": {
+          "src": "https://mageos-docker.magsite.co.uk/media/wysiwyg/widgets/banner/techbeauty3.png",
+          "alt": "Digital beauty transformation"
+        }
+      }
+    ],
+    "settings": {
+      "mode": {
+        "desktop": "static",
+        "tablet": "slider",
+        "mobile": "slider"
+      },
+      "imageWidth": 740,
+      "imageHeight": 460
+    }
+  }
+}

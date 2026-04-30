@@ -1,8 +1,7 @@
 import type { BannerSlideProps } from "./Types";
 import {
     slideWrapper,
-    slideActive,
-    slideImageBase
+    slideActive
 } from "./BannerSlide/style";
 
 export const BannerSlide = ({ slide, isActive, tileMode }: BannerSlideProps) => {
@@ -28,17 +27,10 @@ export const BannerSlide = ({ slide, isActive, tileMode }: BannerSlideProps) => 
                 sizes={image.sizes}
                 alt={title?.text || ""}
                 style={{
-                    ...(tileMode
-                        ? {
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            objectPosition: `${focal.x * 100}% ${focal.y * 100}%`
-                        }
-                        : {
-                            ...slideImageBase,
-                            objectPosition: `${focal.x * 100}% ${focal.y * 100}%`
-                        })
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: `${focal.x * 100}% ${focal.y * 100}%`
                 }}
             />
         </div>

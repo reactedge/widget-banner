@@ -2,7 +2,7 @@
 import { BannerSlide } from "./BannerSlide.tsx";
 import type {BannerStaticProps} from "./Types.ts";
 
-export const BannerStatic = ({ slides, config }: BannerStaticProps) => {
+export const BannerStatic = ({ slides }: BannerStaticProps) => {
     // Breakpoints
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
     const isTablet = window.matchMedia("(min-width: 641px) and (max-width: 1024px)").matches;
@@ -20,30 +20,12 @@ export const BannerStatic = ({ slides, config }: BannerStaticProps) => {
                 display: "grid",
                 gridTemplateColumns: `repeat(${columns()}, 1fr)`,
                 gap: "20px",
-                width: "100%",
-                height: config.height
+                width: "100%"
             }}
         >
             {slides.map((slide, index) => {
-                const ratio = isMobile
-                    ? config.mode.mobile || "3:4"
-                    : isTablet
-                        ? config.mode.tablet || "4:3"
-                        : config.mode.desktop || "16:7";
-
-                const [w, h] = ratio.split(":").map(Number);
-                const paddingTop = (h / w) * 100;
-
                 return (
-                    <div
-                        key={index}
-                        style={{
-                            position: "relative",
-                            width: "100%",
-                            height: "100%",
-                            paddingTop: paddingTop + "%"
-                        }}
-                    >
+                    <div key={index}>
                         <BannerSlide slide={slide} isActive={false} tileMode={true} />
                     </div>
                 );
