@@ -21,10 +21,9 @@ export const BannerSlider = ({ slides, config }: BannerSliderProps) => {
     return (
         <div className="banner-media">
             <div style={{
-                position: "relative",
-                width: w,
-                height: h,
-                overflow: "hidden"
+                width: w ?? '100%',
+                height: h ?? 'auto',
+                aspectRatio: h ? undefined : '16 / 9'
             }}>
                 {slides.map((slide, i) => (
                     <BannerSlide

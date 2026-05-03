@@ -1,8 +1,11 @@
 export const dotsContainer: React.CSSProperties = {
+    position: "absolute",
+    bottom: "20px",
+    left: "50%",
+    transform: "translateX(-50%)",
     display: "flex",
     gap: "8px",
-    justifyContent: "center",
-    marginTop: "12px"
+    zIndex: 20
 };
 
 export const dotBase: React.CSSProperties = {
