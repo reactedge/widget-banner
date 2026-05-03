@@ -3,14 +3,16 @@
     "slides": [
       {
         "image": {
-          "src": "https://mageos-docker.magsite.co.uk/media/wysiwyg/widgets/banner/techbeauty1.png",
-          "alt": "Beauty and technology fusion"
+          "src": "https://mageosuk.reactedge.net/media/wysiwyg/widgets/banner/techbeauty1.webp",
+          "alt": "Beauty and technology fusion",
+          "fallback": "https://mageosuk.reactedge.net/media/wysiwyg/widgets/banner/techbeauty1.png"
         }
       },
       {
         "image": {
-          "src": "https://mageos-docker.magsite.co.uk/media/wysiwyg/widgets/banner/techbeauty3.png",
-          "alt": "Digital beauty transformation"
+          "src": "https://mageosuk.reactedge.net/media/wysiwyg/widgets/banner/techbeauty3.webp",
+          "alt": "Digital beauty transformation",
+          "fallback": "https://mageosuk.reactedge.net/media/wysiwyg/widgets/banner/techbeauty3.png"
         }
       }
     ],

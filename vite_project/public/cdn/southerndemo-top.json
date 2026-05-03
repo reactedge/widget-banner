@@ -4,8 +4,6 @@
       {
         "image": {
           "src": "https://southerndemo.com/wp-content/themes/greenedge/images/home-banner/image5.webp",
-          "srcSet": "/images/home-banner/image5-mobile.jpg 600w, /images/home-banner/image5-mobile.jpg 1200w",
-          "sizes": "(max-width: 768px) 100vw, 33vw",
           "alt": "Close-up of green leaves with natural texture"
         }
       },
@@ -21,7 +19,9 @@
         "desktop": "static",
         "tablet": "slider",
         "mobile": "slider"
-      }
+      },
+      "imageWidth": 466,
+      "imageHeight": 186
     }
   }
 }

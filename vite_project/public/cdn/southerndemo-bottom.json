@@ -25,7 +25,9 @@
         "desktop": "static",
         "tablet": "slider",
         "mobile": "slider"
-      }
+      },
+      "imageWidth": 466,
+      "imageHeight": 186
     }
   }
 }

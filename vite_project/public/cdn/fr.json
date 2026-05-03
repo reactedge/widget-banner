@@ -22,14 +22,15 @@
           "alt": "A Dorset local specialist in Solar Energy Solutions"
         }
       }
-    ]
-  },
-  "settings": {
-    "mode": {
-      "desktop": "static",
-      "tablet": "slider",
-      "mobile": "slider"
-    },
-    "height": "300px"
+    ],
+    "settings": {
+      "mode": {
+        "desktop": "static",
+        "tablet": "slider",
+        "mobile": "slider"
+      },
+      "imageWidth": 538,
+      "imageHeight": 316
+    }
   }
 }

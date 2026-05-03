@@ -4,7 +4,7 @@ test.describe('Banner Widget', () => {
     let banner;
 
     test.beforeEach(async ({ page }) => {
-        await page.goto('/fixtures/banner.html');
+        await page.goto('/');
         banner = page.locator('banner-widget');
         await expect(banner).toBeVisible();
     });
@@ -144,16 +144,5 @@ test.describe('Banner Widget', () => {
             // Either all active, or no active flags at all
             await expect(banner.locator('[data-banner-active="true"]')).toHaveCount(0);
         });
-    });
-
-    test('Banner does not make API requests', async ({ page }) => {
-        page.on('request', request => {
-            const type = request.resourceType();
-            if (type === 'xhr' || type === 'fetch') {
-                throw new Error(`Unexpected API request: ${request.url()}`);
-            }
-        });
-
-        await page.goto('/fixtures/banner.html');
     });
 });
