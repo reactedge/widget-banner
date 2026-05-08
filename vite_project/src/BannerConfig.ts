@@ -5,6 +5,8 @@ export interface BannerRawWidgetConfig {
     data: BannerWidgetConfig
 }
 
+export const WIDGET_ID = 'banner';
+
 export interface BannerWidgetConfig {
     readonly slides: BannerSlide[]
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import {type BannerRawWidgetConfig, readWidgetConfig} from "../BannerConfig.ts";
 import {BannerStatic} from "./BannerStatic.tsx";
 import {BannerSlider} from "./BannerSlider.tsx";
