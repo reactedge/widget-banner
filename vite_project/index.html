@@ -33,11 +33,12 @@
         container.style.width = width + 'px';
         container.style.margin = '10px';
         container.style.border = '1px dashed #ccc';
-        container.style.display = 'flex';
-        container.style.gap = '10px';
+        container.style.overflow = 'hidden';
 
         const widgetWrapper = document.createElement('div');
-        widgetWrapper.style.flex = '1';
+
+        widgetWrapper.style.width = '100%';
+        widgetWrapper.style.overflow = 'hidden';
 
         const el = document.createElement('banner-widget');
         widgetWrapper.appendChild(el);

@@ -1,7 +1,6 @@
 import React from 'react';
 import {type BannerRawWidgetConfig, readWidgetConfig} from "./BannerConfig.ts";
-import {BannerStatic} from "./components/BannerStatic.tsx";
-import {Spinner} from "./components/Spinner.tsx";
+import {BannerStaticSlide} from "./components/BannerStaticSlide.tsx";
 
 type Props = {
     rawConfig: BannerRawWidgetConfig;
@@ -12,8 +11,26 @@ export const BannerWidgetView = ({ rawConfig }: Props) => {
 
     if (!config) return null;
 
-    if (config.slides.length === 0) return <Spinner />;
+    if (config.slides.length === 0) return null;
 
-    return <BannerStatic slides={config.slides} config={config.settings} />;
+    return (
+        <div className="reactedge-banner-view">
+            {config.slides.map((slide, index) => {
+                return (
+                    <div
+                        key={index}
+                        className="reactedge-banner-view__item"
+                    >
+                        <BannerStaticSlide
+                            slide={slide}
+                            isActive={false}
+                            tileMode={true}
+                            height={rawConfig.data.settings.ssr?.height | rawConfig.data.settings.imageHeight}
+                        />
+                    </div>
+                );
+            })}
+        </div>
+    );
 };
 
