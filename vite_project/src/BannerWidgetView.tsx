@@ -25,7 +25,7 @@ export const BannerWidgetView = ({ rawConfig }: Props) => {
                             slide={slide}
                             isActive={false}
                             tileMode={true}
-                            height={rawConfig.data.settings.ssr?.height | rawConfig.data.settings.imageHeight}
+                            height={rawConfig.data.settings.ssr?.height || rawConfig.data.settings.imageHeight}
                         />
                     </div>
                 );
