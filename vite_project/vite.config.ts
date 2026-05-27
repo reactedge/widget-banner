@@ -13,8 +13,8 @@ export default defineConfig({
     'process.env': {}
   },
   build: {
-    outDir: "../www",
-    cssCodeSplit: true,
+    outDir: `../../widgets/${widgetName}/`,
+    cssCodeSplit: false,
     emptyOutDir: false,
     lib: {
       entry: "src/widget.ts",
@@ -30,11 +30,5 @@ export default defineConfig({
     },
     minify: true,
     sourcemap: false
-  },
-  optimizeDeps: {
-    include: [
-      'react',
-      'react-dom'
-    ]
   }
 })
