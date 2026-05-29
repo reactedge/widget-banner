@@ -1,21 +1,21 @@
 import {activity} from "./activity";
 import type {BannerSettingConfig, BannerSlide} from "./components/Types.ts";
 
-export interface BannerRawWidgetConfig {
-    data: BannerWidgetConfig
+export interface RawWidgetConfig {
+    data: WidgetConfig
 }
 
 export const WIDGET_ID = 'banner';
 
-export interface BannerWidgetConfig {
+export interface WidgetConfig {
     readonly slides: BannerSlide[]
 
     readonly settings: BannerSettingConfig;
 }
 
 export function readWidgetConfig(
-    rawConfig: BannerRawWidgetConfig
-): BannerWidgetConfig {
+    rawConfig: RawWidgetConfig
+): WidgetConfig {
     const contract = {
         slides: rawConfig.data.slides,
         settings: rawConfig.data.settings

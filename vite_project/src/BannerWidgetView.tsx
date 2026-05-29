@@ -1,9 +1,9 @@
 import React from 'react';
-import {type BannerRawWidgetConfig, readWidgetConfig} from "./BannerConfig.ts";
+import {type RawWidgetConfig, readWidgetConfig} from "./Config.ts";
 import {BannerStaticSlide} from "./components/BannerStaticSlide.tsx";
 
 type Props = {
-    rawConfig: BannerRawWidgetConfig;
+    rawConfig: RawWidgetConfig;
 };
 
 export const BannerWidgetView = ({ rawConfig }: Props) => {
