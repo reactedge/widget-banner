@@ -2,9 +2,9 @@ import React from 'react';
 import type { BannerSlideProps } from "./Types";
 
 export const BannerStaticSlide = ({ slide, height }: BannerSlideProps) => {
-    const { image, title } = slide;
+    const { image } = slide;
 
-    const focal = image?.focalPoint || { x: 0.5, y: 0.5 };
+    const focal = { x: 0.5, y: 0.5 };
 
     return (
         <div data-banner-slide>
@@ -13,7 +13,7 @@ export const BannerStaticSlide = ({ slide, height }: BannerSlideProps) => {
                 src={image.src}
                 srcSet={image.srcset}
                 sizes={image.sizes}
-                alt={title?.text || ""}
+                alt={image?.alt || ""}
                 style={{
                     objectPosition: `${focal.x * 100}% ${focal.y * 100}%`,
                     height: `${height}px`

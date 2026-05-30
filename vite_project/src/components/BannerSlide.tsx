@@ -6,9 +6,9 @@ import {
 } from "./BannerSlide/style";
 
 export const BannerSlide = ({ slide, isActive, tileMode }: BannerSlideProps) => {
-    const { image, title } = slide;
+    const { image } = slide;
 
-    const focal = image?.focalPoint || { x: 0.5, y: 0.5 };
+    const focal = { x: 0.5, y: 0.5 };
 
     const wrapperStyle: React.CSSProperties = tileMode
         ? {}
@@ -26,7 +26,7 @@ export const BannerSlide = ({ slide, isActive, tileMode }: BannerSlideProps) => 
                 src={image.src}
                 srcSet={image.srcset}
                 sizes={image.sizes}
-                alt={title?.text || ""}
+                alt={image?.alt || ""}
                 style={{
                     width: "100%",
                     height: "100%",

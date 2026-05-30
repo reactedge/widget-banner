@@ -41,6 +41,7 @@
         widgetWrapper.style.overflow = 'hidden';
 
         const el = document.createElement('banner-widget');
+        el.setAttribute('data-instance', `banner${i}`)
         widgetWrapper.appendChild(el);
 
         const contractViewer = document.createElement('pre');
