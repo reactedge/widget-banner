@@ -1,20 +1,14 @@
-import { createRoot } from "react-dom/client";
-import type {BannerRawWidgetConfig} from "./BannerConfig.ts";
-import {getMountedHost} from "./widget-runtime/lib/hostReader.ts";
+import {createRoot} from "react-dom/client";
+import type {RawWidgetConfig} from "./Config.ts";
+import React from "react";
 import {activity} from "./activity";
-import {BannerWidget} from "./components/BannerWidget.tsx";
-import {fallback} from "./lib/fallback.ts";
+import {getMountedHost} from "./lib/hostReader.ts";
+import {WidgetWrapper} from "./components/WidgetWrapper.tsx";
 
-export const WIDGET_ID = 'banner';
-
-export function mountWidget(hostElement: HTMLElement, rawConfig: BannerRawWidgetConfig) {
+export async function mountWidget(hostElement: HTMLElement, config: RawWidgetConfig) {
     const mountedHost = getMountedHost(hostElement);
 
     activity('bootstrap', 'Widget mounted', hostElement);
 
-    // Create React root inside shadow
-    const root = createRoot(mountedHost);
-    root.render(<BannerWidget rawConfig={rawConfig} />);
-
-    fallback(hostElement)
+    createRoot(mountedHost).render(<WidgetWrapper rawConfig={config} />);
 }

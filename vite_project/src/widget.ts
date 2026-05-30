@@ -1,7 +1,9 @@
-import {mountWidget, WIDGET_ID} from "./mountWidget";
-import type {BannerRawWidgetConfig} from "./BannerConfig.ts";
+import {mountWidget} from "./mountWidget.tsx";
+import {WIDGET_ID, type RawWidgetConfig} from "./Config.ts";
 
-const mount = async (el: HTMLElement, config: BannerRawWidgetConfig) => {
+import "./styles/widget.css"
+
+const mount = async (el: HTMLElement, config: RawWidgetConfig) => {
     await mountWidget(el, config)
 }
 

@@ -42,14 +42,20 @@ export interface BannerSlideProps {
     slide: BannerSlide;
     isActive: boolean;
     tileMode: boolean
+    height?: number
 }
 
 export type BannerModeValue = "static" | "slider" | "none";
+
+export interface BannerSsrSettings {
+    height: number
+}
 
 export interface BannerSettingConfig {
     mode: BannerMode;
     imageHeight: number;
     imageWidth: number;
+    ssr?: BannerSsrSettings
 }
 
 export interface BannerMode {

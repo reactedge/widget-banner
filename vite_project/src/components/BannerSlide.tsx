@@ -1,3 +1,4 @@
+import React from 'react';
 import type { BannerSlideProps } from "./Types";
 import {
     slideWrapper,
