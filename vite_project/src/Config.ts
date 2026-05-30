@@ -1,4 +1,4 @@
-import {activity} from "./activity";
+import {WidgetActivity} from "./activity";
 import type {BannerSettingConfig, BannerSlide} from "./components/Types.ts";
 
 export interface RawWidgetConfig {
@@ -14,14 +14,15 @@ export interface WidgetConfig {
 }
 
 export function readWidgetConfig(
-    rawConfig: RawWidgetConfig
+    rawConfig: RawWidgetConfig,
+    activity?: WidgetActivity
 ): WidgetConfig {
     const contract = {
         slides: rawConfig.data.slides,
         settings: rawConfig.data.settings
     };
 
-    activity('bootstrap', 'Config resolved', contract);
+    activity?.log('bootstrap', 'Config resolved', contract);
 
     return Object.freeze(contract);
 }

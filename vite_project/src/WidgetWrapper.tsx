@@ -1,14 +1,16 @@
 import React from 'react';
-import {type RawWidgetConfig, readWidgetConfig} from "../Config.ts";
-import {BannerStatic} from "./BannerStatic.tsx";
-import {BannerSlider} from "./BannerSlider.tsx";
+import {type RawWidgetConfig, readWidgetConfig} from "./Config.ts";
+import {BannerSlider} from "./components/BannerSlider.tsx";
+import {BannerStatic} from "./components/BannerStatic.tsx";
+import {useActivityContext} from "./activity/Context/useActivityContext.ts";
 
 type Props = {
     rawConfig: RawWidgetConfig
 }
 
 export const WidgetWrapper = ({rawConfig}: Props) => {
-    const config = readWidgetConfig(rawConfig);
+    const activity = useActivityContext()
+    const config = readWidgetConfig(rawConfig, activity);
 
     if (!config) return null;
 

@@ -3,16 +3,17 @@ import { BannerSlide } from "./BannerSlide.tsx";
 import { NavigationDots } from "./NavigationDots.tsx";
 import { NavigationArrows } from "./NavigationArrows.tsx";
 import type {BannerSliderProps} from "./Types.ts";
-import {activity} from "../activity";
+import {useActivityContext} from "../activity/Context/useActivityContext.ts";
 
 export const BannerSlider = ({ slides, config }: BannerSliderProps) => {
+    const activity = useActivityContext()
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const mode = config.mode.desktop;
     const w = config.imageWidth;
     const h = config.imageHeight;
 
-    activity('banner_slider', 'Banner Slider', {
+    activity.log('banner_slider', 'Banner Slider', {
         mode,
         w,
         h
